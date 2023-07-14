@@ -3,6 +3,6 @@
 
 顺手注册了个小号把译文传b站，原文:[https://kakuyomu.jp/works/16817330656149153892](https://kakuyomu.jp/works/16817330656149153892)
 
-b站专栏文集好像没有专门的链接，这是序章的链接[https://www.bilibili.com/read/cv24880878](https://www.bilibili.com/read/cv24880878)
+b站专栏文集好像没有专门的链接，这是序章的链接：[https://www.bilibili.com/read/cv24880878](https://www.bilibili.com/read/cv24880878)
 
 [这里是序章](https://yll683.github.io/novel/)
