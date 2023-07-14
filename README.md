@@ -5,4 +5,4 @@
 
 b站专栏文集好像没有专门的链接，这是序章的链接：[https://www.bilibili.com/read/cv24880878](https://www.bilibili.com/read/cv24880878)
 
-[这里是序章](https://yll683.github.io/novel/)
+[这里是序章](https://yll683.github.io/novel/0.html)
