@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 20px; /* 调整标题下方的间距 */
+    }
+
+    .article-content {
+      max-width: 600px;
+      text-align: justify;
+      line-height: 1.5;
+      white-space: pre-line;
+      font-size: 18px;
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #333;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      line-height: 60px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 500px;
+      max-height: 80%;
+      overflow-y: auto;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #999;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .link-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .link-list li {
+      margin-bottom: 10px;
+    }
+
+    .link-list li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .container {
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      .popup-content {
+        background-color: #222;
+      }
+
+      .popup-close {
+        color: #ccc;
+      }
+
+      .link-list li a {
+        color: #fff;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .article-content {
+        font-size: 16px;
+      }
+
+      .floating-button {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 24px;
+      }
+
+      .popup-content {
+        padding: 10px;
+        max-width: 300px;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function togglePopup(event) {
+      if (event.target === event.currentTarget) {
+        var popup = document.getElementById("popup");
+        popup.style.opacity = (popup.style.opacity === "0") ? "1" : "0";
+        popup.style.pointerEvents = (popup.style.pointerEvents === "none") ? "auto" : "none";
+      }
+    }
+
+    function renderMarkdown() {
+      var markdownElements = document.querySelectorAll(".markdown");
+      markdownElements.forEach(function(element) {
+        var markdownText = element.textContent.trim();
+        var html = marked.parse(markdownText);
+        element.innerHTML = html;
+      });
+    }
+
+    window.onload = function() {
+      renderMarkdown();
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>第一话 孤独男子的学校生活</h1>
+    <div class="article-content markdown">
+      这是勇气的选择。
+
+
+
+「早上好！今天天气真好啊！」
+
+
+
+在二年一班的教室里。
+
+
+
+当同学们一起友好地交谈时，陆对一个小团体发起了对话。那是一个由两个男生组成的小团体，既不太张扬也不太低调。
+
+
+
+然而，他们并不是陆的朋友。事实上，他们甚至从未好好地说过话。因此，这两个人对陆的问候感到困惑。
+
+
+
+「嗯……抱歉，你是谁来着？」
+
+
+
+「喂，笨蛋。应该是我们的同班同学吧。你是陆对吧？怎么了？」
+
+
+
+「啊，不……我只是想打个招呼而已……」
+
+
+
+「什么？打招呼……？」
+
+
+
+「这、这样啊……呃……早上好……」
+
+
+
+「啊，哈哈……谢谢……」
+
+
+
+陆小声地说着，离开了他们。然后回到自己的座位上。
+
+
+
+「唉……」
+
+
+
+陆叹了口气，趴在桌子上。他手中拿着一本书，书名上写着《与任何人都能成为好朋友朋友的对话技巧！》。
+
+
+
+「什么“一切从打招呼开始！只要能做到这一点，对话就会自然而然地展开”……我连名字都记不住……」
+
+
+
+他粗暴地把书塞进书包里。然后又叹了口气。
+
+
+
+陆是一个孤独的人。他渴望有朋友。
+
+
+
+由于二年级进入了文科，他失去了原本就不多的朋友。为了交朋友，他努力调查热门话题，为了不被认为是阴沉的家伙而练习微笑说话，甚至努力像刚才那样实践。
+
+
+
+但结果令人遗憾。
+
+
+
+「你知道吗，刚刚我在走廊上看到了一个超可爱的女孩子！」
+
+
+
+「什么？哪个班的？」
+
+
+
+「不、我不知道……但她和我们一样都穿着绿色的室内鞋，对吧？」
+
+
+
+陆离开后，他们继续着谈话，仿佛刚才什么都没发生过。顺便说一句，其他的班级同学也在互相交谈，仿佛完全没有注意到陆的存在。
+
+
+
+只有陆是孤单一人。
+
+
+
+「我真是受够了……我想回家」
+
+
+
+陷入绝望中的陆小声地嘟囔。
+
+
+
+他已经没有和任何人说话的勇气了。没办法，他只好决定在早上的课开始之前一直关在一个人的世界里。他拿出耳机，在手机上打开视频网站。
+
+
+
+「好……现在，昨天的视频有多少播放量呢……」
+
+
+
+首先看的是自己的频道。陆作为一个视频创作者，已经上传了大约几十个关于热门卡牌游戏的视频。
+
+
+
+而且昨天也发布了关于当前环境下最强卡片的解说视频。
+
+
+
+「我对昨天的视频很有自信。一定比平时的播放量要多……！」
+
+
+
+他浏览着屏幕上显示的视频信息。
+
+
+
+结果——播放次数为2次。赞数为1次。而这个播放次数与陆本人在上学后检查视频的次数相同。赞也只有他自己点了一次。
+
+
+
+「在网络的世界里，我也是孤单一人吗……」
+
+
+
+他忍住了要流泪的冲动。顺便说一句，这和往常的结果没有任何区别。
+
+
+
+为了与他人分享共同的爱好而开始做视频，试图在网络上找到自己的位置，但即使在那里，陆也没有被注意到。
+
+
+
+「果然，这么顺利是不太可能的啊……」
+
+
+
+他低着头，关闭了视频应用。这个网站上有着大量的视频。他意识到在网络上引起关注比在现实中交朋友更加困难。
+
+
+
+（即使如此……我还是想和某个人愉快地聊天）
+
+
+
+对于陆来说，这是一个悲哀的愿望。和有共同话题的朋友一起愉快地交谈，放学后在卡牌商店或游戏厅等地一起快乐地玩耍。
+
+
+
+对于许多学生来说，这样的日常可能很平常，但对陆来说，却是他最憧憬的生活。
+
+
+
+「再试一次……我要勇敢一点」
+
+
+
+虽然刚刚被击沉，但又恢复了挑战的欲望。陆对于"想要朋友"的渴望就是如此的强烈。
+
+
+
+总之，他在心里发誓，一定要和下一个进班级的人说上话。他凝视着教室的门。
+
+
+
+突然间，一个女同学进入了教室。
+
+
+
+她有着美丽的灰褐色短发，端庄而秀美的面容，冷静而清澈的表情。她挺直了身子，优雅地站在那里，她的仪态展现出一种威严，让人感受到她的美丽。
+
+
+
+芹沢茉莉奈（せりざわ まりな），陆的同班同学，一个真正的冷艳美女。
+
+
+
+（不，她肯定不行吧……）
+
+
+
+陆失去了刚才的决心，把脸别开，不再看向她。
+
+
+
+因为茉莉奈基本上不和任何人说话。
+
+
+
+与陆不同，她并不是一个孤独的人。她不仅漂亮，而且聪明，而且更受周围人的喜爱。她还是班里的副班长。
+
+
+
+不过，她似乎更喜欢孤身一人，不太主动与人打交道。可以说，她是一个孤高的美少女。
+
+
+
+和这样的人说话，肯定不会有什么像样的对话。更不用说一个孤独的人和她说话，她可能会以“什么？”的口气威慑对方。
+
+
+
+这次就先放弃吧。陆选择了逃避，这时。
+
+
+
+「啊」
+
+
+
+然而，就在陆放弃的一刹那，他看到了她的带子从她手的包里掉了下来。
+
+
+
+这是一个机会。与班级同学交谈的机会。即使是她，对于捡到掉落物品的人，她应该不会无视。如果能成功，这可能成为交朋友的第一步。
+
+
+
+「芹沢同学，这个是你掉的东西。」
+
+
+
+说完，就把掉下来的带子递过去。没什么难的。
+
+
+
+他在脑海中反复模拟了几次同样的台词，进行了一些准备。
+
+
+
+好，可以的。这样想着的同时，陆向她打了声招呼。。
+
+
+
+「芹，芹沢同学！」
+
+
+
+第一步就失败了。陆的脸变得通红。
+
+
+
+而茉莉奈则转过头来。
+
+
+
+「嗯……怎么了？」
+
+
+
+突然被搭话，她感到惊讶。
+
+
+
+但是由于陆咬字不清，他已经丧失了冷静。
+
+
+
+「啊，啊，啊，这个……！给你，还给你！」
+
+
+
+陆忘记了先前的模拟，用力把带子推过去。
+
+
+
+茉莉奈感到惊讶，本能地接过了东西。
+
+
+
+「嗯，嗯……谢谢……？」
+
+
+
+她似乎更感到困惑而不是感激。
+
+
+
+陆在被说什么之前，他迅速回到了自己的座位。
+
+
+
+然后，趴在桌子上假装睡觉。
+
+
+
+（糟了……肯定被认为是个怪人了……）
+
+
+
+如果能更冷静地说话就好了……或者更好的是根本不注意到有东西掉下来……陆对自己进行了一番反省。
+
+
+
+然后，他对自己的失败感到绝望。
+
+
+
+（朋友……也许我该放弃了吧……我会这样孤独地度过直到毕业的灰暗青春）
+
+
+
+「哈哈……哈哈哈……」
+
+
+
+他发出干笑声。
+
+
+
+今天第二次失败，他的心已经碎了。而且这次还是女生。比刚才受到的伤害要大得多。
+
+
+
+仿佛是在安慰他受伤的心灵，铃声轻柔地响起。
+
+
+
+「同学们～，请回到座位上～。铃声已经响了哦～」
+
+
+
+同时，教室的门被作为班主任的女老师打开。由于她的缘故，大家停止了交谈，回到了座位上。不知何时，早朝会的时间已经到了。
+
+
+
+「好了，现在开始点名～……但在此之前，我有个大新闻要宣布哦～！」
+
+
+
+老师开心地笑着。
+
+
+
+「今天呢，我们班迎来了一位转校生哦～」
+
+
+
+老师的话引起了全班的兴奋。
+
+
+
+「真的吗！难道是女生！？」
+
+
+
+「喂，难道刚才我看到的就是那个女孩子……？」
+
+
+
+「老师！转校生在哪里～？」
+
+
+
+「好的好的，大家冷静～。她现在在走廊上等着大家呢～」
+
+
+
+学生们被老师安抚下来。陆虽然没有说话，但他也稍微感到了一些兴趣。
+
+
+
+（转校生啊……能和她交朋友吗……）
+
+
+
+如果是转校生的话，与现在的同学相处可能会很困难，但对于陆来说，这是一个可能的机会。特别是如果是一个像他一样的阴角的话，甚至可能和他成为好朋友。
+
+
+
+（拜托了……希望他是一个普通的男生……！）
+
+
+
+暗中合上双手，陆祈祷着。
+
+
+
+「那么，请进来吧！」
+
+
+
+老师在大家安静的时候，朝着走廊喊道。
+
+
+
+几秒钟后，门开了。
+
+
+
+然后，站在讲台上的是——
+
+
+
+「初次见面！我叫名白红爱な（しろ くれあ）！」
+
+
+
+与陆的预期完全相反，是一个非常可爱的女孩子。
+    </div>
+  </div>
+
+  <div class="floating-button" onclick="togglePopup(event)">≡</div>
+
+  <div class="popup" id="popup" onclick="togglePopup(event)">
+    <div class="popup-content">
+      <span class="popup-close" onclick="togglePopup(event)">&times;</span>
+      <ul class="link-list">
+        <li><a href="#" target="_self">链接1</a></li>
+        <li><a href="#" target="_self">链接2</a></li>
+        <li><a href="#" target="_self">链接3</a></li>
+        <li><a href="#" target="_self">链接4</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
